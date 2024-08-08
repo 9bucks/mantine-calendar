@@ -1,0 +1,59 @@
+.mantine-Calendar-calendarHeader {
+    display: none;
+}
+
+.mantine-Calendar-month {
+    width: 100%;
+    height: 100%;
+}
+
+.mantine-Calendar-monthCell {
+    border: 5px solid #f0f0f0;
+}
+
+.mantine-Calendar-day {
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 8px 4px;
+    /* margin: 0 4px; */
+    min-height: calc(100vh / 8);
+    background-color: #fff;
+    height: 100%;
+}
+
+.mantine-Calendar-day>.day-number {
+    align-self: flex-start;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15%;
+    padding: 0.2rem;
+    background-color: #f3f3f3;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.mantine-Calendar-day>.mantine-Card-root {
+    width: 108%;
+    margin-top: auto;
+}
+
+.mantine-Calendar-day:where([data-today]) {
+    border-color: gold;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.mantine-Calendar-calendarHeaderLevel {
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.mantine-Calendar-weekday {
+    user-select: none;
+    font-size: 1rem;
+}
