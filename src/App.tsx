@@ -9,18 +9,18 @@ import "./calendar.css";
 import DayEvent from './components/DayEvent';
 import Header from './components/Header';
 
-const events = [
-  {
-    date: dayjs("2024-07-29"),
-    title: "Happy Birthday!",
-  },
-  {
-    date: dayjs("2024-07-21"),
-    title: "New Year!",
-  }
-]
+type Event = {
+  id?: string;
+  date: Date;
+  title: string;
+}
 
-function App() {
+type AppProps = {
+  events: Array<Event>;
+  onEventClick: (event: Event) => void;
+};
+
+function App(props: AppProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   return (
@@ -33,22 +33,22 @@ function App() {
       />
       <Calendar
         static
-        // hideOutsideDates
         maxLevel='month'
         weekdayFormat='ddd'
         date={currentDate}
         renderDay={(date) => {
           const day = date.getDate();
-          const event = events.find((event) => event.date.isSame(date, 'day'));
+          const event = props.events.find((event) => dayjs(event.date).isSame(date, 'day'));
           return (
             <>
               <Title order={5} className='day-number'>{day}</Title>
-              <DayEvent title={event?.title} />
+              {event &&
+                <DayEvent onClick={() => props.onEventClick?.(event)} title={event?.title} />
+              }
             </>
           );
         }}
       />
-      {/* <Footer /> */}
     </Box>
   );
 }

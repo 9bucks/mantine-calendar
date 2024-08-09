@@ -2,6 +2,7 @@ import { Card, Text } from '@mantine/core';
 
 type DayEventProps = {
     title?: string;
+    onClick?: () => void;
 };
 
 function DayEvent(props: DayEventProps) {
