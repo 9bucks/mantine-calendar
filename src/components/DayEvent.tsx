@@ -10,7 +10,7 @@ function DayEvent(props: DayEventProps) {
         return null
     }
     return (
-        <Card shadow="sm" padding="xs" radius="md" withBorder>
+        <Card shadow="sm" padding="xs" radius="md" withBorder style={{ cursor: "pointer" }} onClick={props.onClick}>
             <Text
                 fw="bold"
                 variant="gradient"
