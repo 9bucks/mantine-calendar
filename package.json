@@ -1,7 +1,7 @@
 {
   "name": "mantine-calendar",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Events calendar built with Mantine and React",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -29,5 +29,14 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.3.4"
-  }
+  },
+  "author": "9bucks",
+  "license": "MIT",
+  "keywords": [
+    "mantine",
+    "calendar",
+    "react",
+    "events"
+  ],
+  "main": "src/App.tsx"
 }
