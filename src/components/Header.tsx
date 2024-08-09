@@ -17,7 +17,7 @@ function Header(props: HeaderProps) {
                     <ActionIcon variant="filled" aria-label="Previous month" onClick={props.onPreviousClick} >
                         <IconChevronLeft />
                     </ActionIcon>
-                    <Title order={5} style={{ marginLeft: 8, marginRight: 8 }}>{props.title}</Title>
+                    <Title order={5} style={{ width: "12rem", marginLeft: 8, marginRight: 8 }}>{props.title}</Title>
                     <ActionIcon variant="filled" aria-label="Next month" onClick={props.onNextClick} >
                         <IconChevronRight />
                     </ActionIcon>
