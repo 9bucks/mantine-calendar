@@ -19,7 +19,7 @@
     width: auto;
     padding: 8px 4px;
     /* margin: 0 4px; */
-    min-height: calc(100vh / 8);
+    min-height: calc(100vh / 7);
     background-color: #fff;
     height: 100%;
 }

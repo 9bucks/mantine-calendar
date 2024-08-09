@@ -11,19 +11,19 @@ type HeaderProps = {
 
 function Header(props: HeaderProps) {
     return (
-        <Box display="flex" style={{ marginBottom: 10, justifyContent: "space-between" }}>
+        <Box display="flex" style={{ marginBottom: 10, justifyContent: "space-between", alignItems: "center" }}>
             <Box display="flex">
-                <Card display="flex" shadow="xs" padding="xs" radius="md" withBorder style={{ flexDirection: "row", alignItems: "center" }}>
-                    <ActionIcon variant="filled" aria-label="Previous month" onClick={props.onPreviousClick} >
+                <Card display="flex" padding="xs" radius="md" withBorder style={{ flexDirection: "row", alignItems: "center" }}>
+                    <ActionIcon aria-label="Previous month" onClick={props.onPreviousClick} >
                         <IconChevronLeft />
                     </ActionIcon>
-                    <Title order={5} style={{ width: "12rem", marginLeft: 8, marginRight: 8 }}>{props.title}</Title>
-                    <ActionIcon variant="filled" aria-label="Next month" onClick={props.onNextClick} >
+                    <Title order={5} style={{ width: "12rem", textAlign: "center" }}>{props.title}</Title>
+                    <ActionIcon aria-label="Next month" onClick={props.onNextClick} >
                         <IconChevronRight />
                     </ActionIcon>
                 </Card>
             </Box>
-            <Button variant="filled" aria-label="Today" onClick={props.onTodayClick}>
+            <Button aria-label="Today" onClick={props.onTodayClick}>
                 Today
             </Button>
         </Box>
