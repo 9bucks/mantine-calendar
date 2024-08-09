@@ -1,4 +1,4 @@
-import { Box, MantineProvider, Title } from '@mantine/core';
+import { Box, MantineProvider, Text, Title } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { Calendar } from '@mantine/dates';
 import '@mantine/dates/styles.css';
@@ -23,6 +23,8 @@ type AppProps = {
 function App(props: AppProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
+  const today = new Date();
+
   return (
     <MantineProvider>
       <Box>
@@ -42,7 +44,13 @@ function App(props: AppProps) {
             const event = props.events?.find((event) => dayjs(event.date).isSame(date, 'day'));
             return (
               <>
-                <Title order={5} className='day-number'>{day}</Title>
+                <div className='day-number-row'>
+                  <Title className='day-number' order={5}>{day}</Title>
+                  {dayjs(date).isSame(today, 'day') && (
+                    <Text className='today-marker'>Today</Text>
+                  )}
+                </div>
+
                 {event &&
                   <DayEvent onClick={() => props.onEventClick?.(event)} title={event?.title} />
                 }
