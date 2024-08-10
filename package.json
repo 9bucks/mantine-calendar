@@ -1,7 +1,7 @@
 {
   "name": "mantine-calendar",
   "description": "Events calendar built with Mantine and React",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,10 +15,12 @@
     "@mantine/hooks": "^7.11.2",
     "@tabler/icons-react": "^3.11.0",
     "dayjs": "^1.11.12",
+    "path": "^0.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
@@ -38,5 +40,15 @@
     "react",
     "events"
   ],
-  "main": "src/App.tsx"
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/mantine-calendar-lib.umd.cjs",
+  "module": "./dist/mantine-calendar-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mantine-calendar-lib.es.js",
+      "require": "./dist/mantine-calendar-lib.umd.cjs"
+    }
+  }
 }
