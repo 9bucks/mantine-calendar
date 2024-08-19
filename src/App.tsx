@@ -31,11 +31,11 @@ function App(props: AppProps) {
 
   return (
     <MantineProvider>
-      <Box>
+      <Box p="lg">
         <Header
           title={dayjs(currentDate).format('MMMM YYYY')}
-          onPreviousClick={() => setCurrentDate(dayjs(currentDate).subtract(1, 'month').toDate())}
-          onNextClick={() => setCurrentDate(dayjs(currentDate).add(1, 'month').toDate())}
+          onPreviousClick={() => setCurrentDate(dayjs(currentDate).subtract(1, 'month').set('date', 1).toDate())}
+          onNextClick={() => setCurrentDate(dayjs(currentDate).add(1, 'month').set('date', 1).toDate())}
           onTodayClick={() => setCurrentDate(new Date())}
         />
         <Calendar
