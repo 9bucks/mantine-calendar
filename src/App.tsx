@@ -1,9 +1,8 @@
 import { Box, MantineProvider, Text, Title } from '@mantine/core';
-import '@mantine/core/styles.css';
 import { Calendar } from '@mantine/dates';
 import '@mantine/dates/styles.css';
 import dayjs from 'dayjs';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import "./calendar.css";
 import DayEvent from './components/DayEvent';
@@ -18,12 +17,17 @@ type Event = {
 type AppProps = {
   events?: Array<Event>;
   onEventClick?: (event: Event) => void;
+  onMonthChange?: (month: Date) => void;
 };
 
 function App(props: AppProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const today = new Date();
+
+  useEffect(() => {
+    props.onMonthChange?.(currentDate);
+  }, [currentDate, props]);
 
   return (
     <MantineProvider>
