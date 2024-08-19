@@ -1,7 +1,7 @@
 {
   "name": "mantine-calendar",
   "description": "Events calendar built with Mantine and React",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -49,6 +49,7 @@
     ".": {
       "import": "./dist/mantine-calendar-lib.es.js",
       "require": "./dist/mantine-calendar-lib.umd.cjs"
-    }
+    },
+    "./style.css": "./dist/style.css"
   }
 }
