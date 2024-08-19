@@ -27,7 +27,7 @@ function App(props: AppProps) {
 
   useEffect(() => {
     props.onMonthChange?.(currentDate);
-  }, [currentDate, props]);
+  }, [currentDate]);
 
   return (
     <MantineProvider>
